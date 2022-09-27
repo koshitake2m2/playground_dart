@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
-import 'package:dart_sample/myfp.dart';
-import '../mytest_lib.dart';
+import 'package:fpdart/fpdart.dart';
+import 'package:koshitake2m2_dart_lib/test_lib.dart';
 
 void main() {
   group('OptionOpt', () {

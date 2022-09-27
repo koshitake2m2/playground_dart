@@ -1,6 +1,6 @@
 import 'package:dart_sample/dart_sample.dart';
 import 'package:test/test.dart';
-import 'package:dart_sample/myfp.dart';
+import 'package:koshitake2m2_dart_lib/test_lib.dart';
 
 void main() {
   group('User', () {
