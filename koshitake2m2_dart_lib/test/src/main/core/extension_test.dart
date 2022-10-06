@@ -5,6 +5,37 @@ import 'package:koshitake2m2_dart_lib/test_lib.dart';
 import '../../../fixture/fixture.dart';
 
 void main() {
+  group('NullableOpt', () {
+    group('flatMap', () {
+      test('returns value if function returns is not null value', () {
+        int? maybeT = 3;
+        expect(maybeT.flatMap((t) => t + 1), 4);
+      });
+
+      test('returns null if function returns null', () {
+        int? maybeT = 3;
+        expect(maybeT.flatMap((t) => null), null);
+      });
+
+      test('returns null if element is null', () {
+        final int? maybeT = null;
+        expect(maybeT.flatMap((t) => t + 1), null);
+      });
+    });
+
+    group('#match', () {
+      test('returns value if element is null', () {
+        int? maybeT = 3;
+        expect(maybeT.match((t) => t + 1, () => 0), 4);
+      });
+
+      test('returns value if element is not null', () {
+        final int? maybeT = null;
+        expect(maybeT.match((t) => t + 1, () => 0), 0);
+      });
+    });
+  });
+
   group('ListOpt', () {
     group('#find', () {
       test('returns Some(element) if element is found', () {

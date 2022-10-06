@@ -1,6 +1,26 @@
 import 'package:equatable/equatable.dart';
 import 'package:fpdart/fpdart.dart';
 
+extension NullableOpt<T> on T? {
+  S? flatMap<S>(S? Function(T t) onNotNull) {
+    final maybeT = this;
+    if (maybeT == null) {
+      return null;
+    } else {
+      return onNotNull(maybeT);
+    }
+  }
+
+  S match<S>(S Function(T t) onNotNull, S Function() onNull) {
+    final maybeT = this;
+    if (maybeT == null) {
+      return onNull();
+    } else {
+      return onNotNull(maybeT);
+    }
+  }
+}
+
 extension ListOpt<T> on List<T> {
   Option<T> find(bool Function(T) p) => Option.tryCatch(() => firstWhere(p));
 
