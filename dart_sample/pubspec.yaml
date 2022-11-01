@@ -11,6 +11,9 @@ dependencies:
   path: ^1.8.0
   fpdart: ^0.2.0
   koshitake2m2_dart_lib:
+    path: ../koshitake2m2_dart_lib
+  path_provider: ^2.0.11
+  sqflite: ^2.2.0+3
 
 dev_dependencies:
   lints: ^2.0.0

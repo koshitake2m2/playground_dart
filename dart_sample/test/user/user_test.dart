@@ -4,8 +4,8 @@ import 'package:koshitake2m2_dart_lib/test_lib.dart';
 
 void main() {
   group('User', () {
-    print(User.of("hello", "world"));
-    final User user = User.of("hello", "world").unwrap;
+    print(User.of("0", "hello", "world"));
+    final User user = User.of("0", "hello", "world").unwrap;
 
     group('#fullName', () {
       test('returns fullName', () {
